@@ -10,14 +10,14 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class NeedBlood extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class DonateBlood extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     String[] country = { "A", "B", "AB", "O", "O(+ve)", "O(-ve)", "A(+ve)", "A(-ve)", "B(+ve)", "B(-ve)", "AB(+ve)", "AB(-ve)" };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_needblood);
-        Spinner spin = (Spinner) findViewById(R.id.spinner1);
+        setContentView(R.layout.activity_donate_need);
+        Spinner spin = (Spinner) findViewById(R.id.spinner);
         Button submit = (Button)findViewById(R.id.submit);
 
         spin.setOnItemSelectedListener(this);
