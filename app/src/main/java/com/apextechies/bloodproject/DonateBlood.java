@@ -3,6 +3,7 @@ package com.apextechies.bloodproject;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,6 +18,11 @@ public class DonateBlood extends AppCompatActivity implements AdapterView.OnItem
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donate_need);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Donate Blood");
         Spinner spin = (Spinner) findViewById(R.id.spinner);
         Button submit = (Button)findViewById(R.id.submit);
 
@@ -28,6 +34,12 @@ public class DonateBlood extends AppCompatActivity implements AdapterView.OnItem
         //Setting the ArrayAdapter data on the Spinner
         spin.setAdapter(aa);
         submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
